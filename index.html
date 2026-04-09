@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="page-wrap">
+        <div class="app-card">
+            <div class="app-header">
+                <div>
+                    <span class="tag">GÖREV YÖNETİMİ</span>
+                    <h1>Todo List</h1>
+                </div>
+                <div class="header-btns">
+                    <span id="taskCounter" class="counter">0 görev</span>
+                    <button id="btnLoad" class="secondary-btn">Dosya Aç</button>
+                    <button id="btnExport" class="secondary-btn">Dışa Aktar</button>
+                </div>
+            </div>
+
+            <form id="taskForm" class="input-section">
+                <input id="titleInp" type="text" placeholder="Görev başlığı..." required>
+                <input id="descInp" type="text" placeholder="Açıklama...">
+                <button type="submit" id="mainActionBtn" class="primary-btn">Ekle</button>
+            </form>
+
+            <div class="filter-panel">
+                <input id="searchInp" type="text" class="search-bar" placeholder="Görevlerde ara...">
+                <div id="filterBtns" class="filter-group">
+                    <button class="chip active" data-status="all">Tümü</button>
+                    <button class="chip" data-status="todo">Sırada</button>
+                    <button class="chip" data-status="complete">Yapıldı</button>
+                    <button class="chip" data-status="in-progress">Devam Ediyor</button>
+                </div>
+            </div>
+
+            <ul id="taskList" class="list-container"></ul>
+        </div>
+    </main>
+
+    <template id="emptyTpl">
+        <li class="empty-msg">Gösterilecek görev bulunamadı.</li>
+    </template>
+
+    <script src="app.js"></script>
+</body>
+</html>
